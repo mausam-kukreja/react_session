@@ -5,8 +5,9 @@ import { addTodo } from './actions';
 
 class InputList extends Component{
 
+
   	addTodoItem(){
-  		console.log("on click of add addTodoItem");
+  		//console.log("on click of add addTodoItem");
   		//store.dispatch(addTodo('sajoi'))
   		this.props.addTodo('sahil');
   	}
@@ -15,7 +16,7 @@ class InputList extends Component{
 		return(
 			<div>				
 				<input type="text" ref="label"  />
-          		<input type="button" value="add" onClick={this.addTodoItem} />
+          		<input type="button" value="add" onClick={() => {this.addTodoItem}} />
 			</div>
 		)
 	}
