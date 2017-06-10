@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { addTodo } from './actions'
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import { addTodo } from './actions';
 
 class InputList extends Component{
 
   	addTodoItem(){
   		console.log("on click of add addTodoItem");
   		//store.dispatch(addTodo('sajoi'))
+  		this.props.addTodo('sahil');
   	}
 
 	render(){
@@ -21,12 +23,13 @@ class InputList extends Component{
 
 function mapStateToProps(state) {
 	console.log('mapStateToProps');    
+	return state;
 }
 
 
 function matchDispatchToProps(dispatch){
-	console.log('matchDispatchToProps');   
+	return bindActionCreators({addTodo: addTodo}, dispatch);
 }
 
 
-export default connect()(InputList);
+export default connect(mapStateToProps, matchDispatchToProps)(InputList);
