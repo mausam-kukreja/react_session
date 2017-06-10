@@ -6,7 +6,7 @@ const ShowList = (props) => {
 	return (
 	  <ul>
   			{props.toDoData.map((toDoItem,index)=>{return (
-				<li>{props.toDoData[index]}</li>
+				<li key={index}>{toDoItem}</li>
 			)})}
       </ul>
     );  
