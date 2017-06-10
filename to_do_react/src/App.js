@@ -36,8 +36,14 @@ class App extends Component {
 
       console.log(this.state);
 
+      //set state using concat
       var newToDoList = this.state.toDoList.concat([label]);
-      this.setState({toDoList: newToDoList});
+      //this.setState({toDoList: newToDoList});
+
+
+      //set state using const
+      const newToDo = [...this.state.toDoList, label];      
+      this.setState({toDoList: newToDo});
 
       console.log(this.state);
 
