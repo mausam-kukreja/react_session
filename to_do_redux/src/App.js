@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+//import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import InputList from './InputList';
 import ShowList from './ShowList';
-import { addTodo } from './actions'
+//import { addTodo } from './actions'
 
 
 
@@ -19,7 +19,7 @@ const App = () =>
           <InputList />
         </div>
         <div className="App-intro">
-          
+          <ShowList  />
         </div>
       </div>
     );

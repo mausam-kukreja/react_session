@@ -4,10 +4,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import App from './App'
 import reducer from './reducers'
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-
-import { addTodo } from './actions'	
+//import { addTodo } from './actions'	
 
 const store = createStore(reducer)
 
