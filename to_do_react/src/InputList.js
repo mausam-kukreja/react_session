@@ -42,7 +42,7 @@ class InputList extends Component{
   		console.log("on click of add addTodoItem");
   		//this.setState({term});
   		//console.log(this.state);
-  		this.setState({eachItem: 'added'});
+  		//this.setState({eachItem: 'added'});
 
   	}
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import InputList from './InputList';
+import ShowList from './ShowList';
 
 
 class App extends Component {
@@ -33,6 +34,9 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <InputList  />
+        </div>
+        <div className="App-intro">
+          <ShowList data="sahil"  />
         </div>
       </div>
     );
