@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ShowList extends Component{
 
-	constructor(props){
-		super(props);
+const ShowList = (props) => {
 
-	}
-
-	render(){
-		return(
-			<div>
-				<ul>
-					<li>{this.props.data}</li>
-				</ul>
-			</div>
-		)
-	}
+	return (
+	  <ul>
+  			{props.toDoData.map((toDoItem,index)=>{return (
+				<li>{props.toDoData[index]}</li>
+			)})}
+      </ul>
+    );  
 }
 
 export default ShowList;

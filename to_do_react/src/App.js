@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import InputList from './InputList';
 import ShowList from './ShowList';
 
 
@@ -9,21 +8,42 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    /*this.state = {
+    this.state = {
       toDoList: []
     }
-    
-    console.log(props);
-    console.log(this.state);*/
 
     //this.addTodo = this.addTodo.bind(this);
+    this.getTodoItem  = this.getTodoItem.bind(this);
+    this.addTodoItem  = this.addTodoItem.bind(this);
   };
 
 
-  addTodo() {
-    console.log("on click of add App");
+  getTodoItem(evt) {
+      //console.log("on click of add getTodoItem");
+      //console.log(evt.target.value);
+     
+    }
 
-  }
+    addTodoItem(){
+      console.log("on click of add addTodoItem");      
+
+      //read current input
+      const label = this.refs.label.value;
+      console.log(label);
+
+      //read current state
+      const  {toDoItems} = this.state;
+
+      console.log(this.state);
+
+      var newToDoList = this.state.toDoList.concat([label]);
+      this.setState({toDoList: newToDoList});
+
+      console.log(this.state);
+
+      //reset the text value
+      this.refs.label.value = '';
+    }
 
   render() {
     return (
@@ -33,10 +53,11 @@ class App extends Component {
           <h2>Welcome to React To Do List</h2>
         </div>
         <div className="App-intro">
-          <InputList  />
+          <input type="text" ref="label" value={this.state.eachItem} onChange={this.getTodoItem} />
+          <input type="button" value="add" onClick={this.addTodoItem} />
         </div>
         <div className="App-intro">
-          <ShowList data="sahil"  />
+          <ShowList toDoData={this.state.toDoList}  />
         </div>
       </div>
     );
